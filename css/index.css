@@ -1,0 +1,47 @@
+/* VARIABLES PARA LOS COLORES */
+:root
+{
+    --bg-body: #0F171E;
+    --bg-navbar: #1A232E;
+    --btn-play-color: #1399DE;
+    --font-color: #FFFFFF;
+    --link-active-navbar: #FFFFFF;
+    --link-disable-navbar: #E6E7E9;
+    --links-color: #90DFFE;
+}
+
+/* FONT IMPORTADA DESDE LOCAL */
+@font-face
+{
+    font-family: 'Amazon Ember';
+    src: url(../fonts/Amazon-Ember-Medium.ttf),
+         url(../fonts/Amazon-Ember-MediumItalic.ttf),
+         url(../fonts/AmazonEmber_Bold.ttf),
+         url(../fonts/AmazonEmber_BoldItalic.ttf),
+         url(../fonts/AmazonEmber_Heavy.ttf),
+         url(../fonts/AmazonEmber_HeavyItalic.ttf),
+         url(../fonts/AmazonEmber_Light.ttf),
+         url(../fonts/AmazonEmber_LightItalic.ttf),
+         url(../fonts/AmazonEmber_Regular.ttf),
+         url(../fonts/AmazonEmber_RegularItalic.ttf),
+         url(../fonts/AmazonEmber_Thin.ttf),
+         url(../fonts/AmazonEmber_ThinItalic.ttf);
+}
+
+*
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    background: var(--bg-body);
+    font-family: 'Amazon Ember';
+}
+
+main
+{
+    min-height: 100vh;
+}
