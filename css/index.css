@@ -2,12 +2,14 @@
 :root
 {
     --bg-body: #0F171E;
+    --bg-footer: #222;
     --bg-navbar: #1A232E;
     --btn-play-color: #1399DE;
     --font-color: #FFFFFF;
     --link-active-navbar: #FFFFFF;
-    --link-disable-navbar: #E6E7E9;
-    --links-color: #90DFFE;
+    --link-disable-navbar: #F2F4F6;
+    --link-navbar: rgba(242, 244, 246, .9);
+    --links-color: #0F79AF;
 }
 
 /* FONT IMPORTADA DESDE LOCAL */
@@ -44,4 +46,71 @@ body
 main
 {
     min-height: 100vh;
+}
+
+.bg-navbar
+{
+    background: var(--bg-navbar);
+    padding: 1rem 3rem;
+}
+
+.img-brand-logo
+{
+    background-position: left 0;
+    height: 2.5rem;
+    position: relative;
+    top: 2px;
+    width: 7rem;
+}
+
+.text-nav-link
+{
+    color: var(--link-navbar);
+    font-size: 17px;
+    font-weight: normal;
+}
+
+.text-footer-link
+{
+    color: var(--links-color);
+    text-decoration: none;
+}
+
+.text-nav-link:hover
+{
+    color: #FFF;
+}
+
+.text-footer-link:hover
+{
+    color: var(--links-color);
+}
+
+
+.bg-footer
+{
+    background: var(--bg-footer);
+    color: #b1b1b1;
+    font-size: 15px;
+    padding: 1.5rem;
+}
+
+.img-footer-logo
+{
+    color: var(--link-color);
+    height: 2rem;
+    width: 6.8125rem;
+}
+
+@media screen and (max-width: 768px)
+{
+    .bg-navbar
+    {
+        padding: .5rem .75rem;
+    }
+
+    .bg-footer
+    {
+        font-size: 13px;
+    }
 }

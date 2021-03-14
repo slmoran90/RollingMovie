@@ -14,12 +14,61 @@
         <!-- CUSTOM CSS -->
         <link rel="stylesheet" href="css/index.css">
         
-        <title>Prime Video</title>
+        <title>Bienvenido a Prime Video</title>
     </head>
     <body>
-        <header></header>
+        <header class="bg-navbar">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="container-fluid">
+                    <a href="index.html" class="navbar-brand">
+                        <img src="img/img-logo/prime-video.png"
+                        alt="Logo Amazon Prime Video"
+                        class="img-brand-logo">
+                    </a>
+                    <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbar"
+                    aria-controls="navbar"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbar">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link text-nav-link pt-3 py-lg-0 pe-3">Ingresar</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link text-nav-link pt-3 py-lg-0">Registrarse</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
         <main></main>
-        <footer></footer>
+        <footer>
+            <section class="bg-footer d-flex flex-column justify-content-center align-items-center">
+                <img src="img/img-logo/prime-video.png" alt="Logo Prime Video" class="img-footer-logo">
+                <div class="mt-2">
+                    <ul class="list-unstyled ul-footer d-flex flex-wrap justify-content-center">
+                        <li class="pe-2">
+                            <a href="#" class="text-footer-link fw-light">Términos y Aviso de privacidad</a>
+                        </li>
+                        <li class="pe-sm-3 pe-md-2 my-sm-2 my-md-0">
+                            <a href="#" class="text-footer-link">Comentarios</a>
+                        </li>
+                        <li class="pe-2">
+                            <a href="#" class="text-footer-link">Ayuda</a>
+                        </li>
+                        <li class="pe-2">
+                            <p>&copy; 1996-2021, Amazon.com, Inc. o afiliados</p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </footer>
 
         <!-- BOOTSTAP & POPPER -->
         <script src="js/popper.min.js"></script>
