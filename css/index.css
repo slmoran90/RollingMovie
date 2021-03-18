@@ -16,19 +16,27 @@
 @font-face
 {
     font-family: 'Amazon Ember';
-    src: url(../fonts/Amazon-Ember-Medium.ttf),
-         url(../fonts/Amazon-Ember-MediumItalic.ttf),
-         url(../fonts/AmazonEmber_Bold.ttf),
-         url(../fonts/AmazonEmber_BoldItalic.ttf),
-         url(../fonts/AmazonEmber_Heavy.ttf),
-         url(../fonts/AmazonEmber_HeavyItalic.ttf),
-         url(../fonts/AmazonEmber_Light.ttf),
-         url(../fonts/AmazonEmber_LightItalic.ttf),
-         url(../fonts/AmazonEmber_Regular.ttf),
-         url(../fonts/AmazonEmber_RegularItalic.ttf),
-         url(../fonts/AmazonEmber_Thin.ttf),
-         url(../fonts/AmazonEmber_ThinItalic.ttf);
+    src: url(../fonts/Amazon-Ember-Medium.ttf);
+    font-style: normal;
+    font-weight: 400;
 }
+
+@font-face
+{
+    font-family: 'Amazon Ember';
+    src: url(../fonts/AmazonEmber_Bold.ttf);
+    font-style: bold;
+    font-weight: 700;
+}
+
+@font-face
+{
+    font-family: 'Amazon Ember';
+    src: url(../fonts/AmazonEmber_Light.ttf);
+    font-style: lighter;
+    font-weight: 300;
+}
+
 
 *
 {
@@ -47,6 +55,9 @@ main
 {
     min-height: 100vh;
 }
+
+
+/*ESTILOS PARA NAVBAR & FOOTER*/
 
 .bg-navbar
 {
@@ -102,6 +113,54 @@ main
     width: 6.8125rem;
 }
 
+/*ESTIOLOS PARA CONTENIDO */
+.mt-custom-main
+{
+    margin-top: 5.2rem;
+}
+
+.bg-link
+{
+    background-color: var(--links-color);
+}
+
+#section-index
+{
+    min-height: 30rem;
+}
+
+#section-dispositives
+{
+    background: #fff;
+}
+
+#section-dispositives > article > h2
+{
+    font-size: 2.25rem;
+}
+
+#img-container-1
+{
+    background: #000;
+    background-image: linear-gradient(to right, #000 45%, transparent 65%),
+                            url(../img/index-page/amazon-article-1.jpg);
+        background-position: right top;
+        background-size: cover;
+        height: 70vh;
+        width: 100%;
+}
+
+#img-container-2
+{
+    background: #000;
+    background-image: linear-gradient(to left, #000 45%, transparent 65%),
+                            url(../img/index-page/amazon-article-2.jpg);
+        background-position: left top;
+        background-size: cover;
+        height: 70vh;
+}
+
+/*ESTILOS RESPONSIVE*/
 @media screen and (max-width: 768px)
 {
     .bg-navbar
@@ -112,5 +171,55 @@ main
     .bg-footer
     {
         font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 1024px)
+{
+    #img-container-1
+    {
+        background-image: linear-gradient(to top, #000 0, transparent 20%),
+                            url(../img/index-page/amazon-article-1.jpg);
+        background-position: right top;
+        background-size: cover;
+
+    }
+
+    #img-container-2
+    {
+        background-image: linear-gradient(to top, #000 0, transparent 20%),
+                            url(../img/index-page/amazon-article-2.jpg);
+        background-position: left top;
+        background-size: cover;
+    }
+
+    .info-article
+    {
+        background: #000;
+        padding-bottom: 5%;
+    }
+}
+
+@media screen and (min-width: 1025px)
+{
+    .info-article
+    {
+        background: none;
+        position: absolute;
+        z-index: 1;
+    }
+
+    #article-1
+    {
+        padding-right: 60%;
+        padding-left: 5%;
+        left: 0;
+    }
+
+    #article-2
+    {
+        padding-left: 60%;
+        padding-right: 5%;
+        right: 0;
     }
 }

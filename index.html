@@ -17,7 +17,7 @@
         <title>Bienvenido a Prime Video</title>
     </head>
     <body>
-        <header class="bg-navbar">
+        <header class="bg-navbar fixed-top py-2">
             <nav class="navbar navbar-expand-lg navbar-dark">
                 <div class="container-fluid">
                     <a href="index.html" class="navbar-brand">
@@ -47,22 +47,68 @@
                 </div>
             </nav>
         </header>
-        <main></main>
+        <main class="mt-custom-main">
+            <section id="section-index">
+                <article class="d-sm-flex flex-column justify-content-center position-relative">
+                    <div id="img-container-1"></div>
+                    <div class="text-white text-center d-sm-block d-lg-flex flex-lg-column justify-content-center pt-4 info-article" id="article-1">
+                        <h2>Ve películas y series</h2>
+                        <p class="fw-light px-3 text-center">
+                            Disfruta de series Amazon Originals exclusivas, además de películas y series populares por <b>ARS 219</b>/mes. Disfruta ahora, cancela en cualquier momento.
+                        </p>
+                        <button class="btn bg-link text-white py-3 mb-5" type="button">Comienza tu periodo de prueba gratis</button>
+                    </div>
+                </article>
+                <article class="d-sm-flex flex-column justify-content-center position-relative">
+                    <div id="img-container-2"></div>
+                    <div class="text-white text-center d-sm-block d-lg-flex flex-lg-column justify-content-center pt-4 info-article" id="article-2">
+                        <h2>Excelente entretenimiento</h2>
+                        <p class="fw-light px-3 text-center">
+                            Con Prime Video, podrás acceder a series populares como The Boys, y a grandes éxitos como The Office y Parks and Recreation.
+                        </p>
+                        <button class="btn bg-link text-white py-3 mb-5" type="button">Comienza tu periodo de prueba gratis</button>
+                    </div>
+                </article>
+            </section>
+            <section id="section-dispositives" class="row gx-0 d-flex justify-content-center p-3">
+                <article class="col-sm-12 col-md-4 d-flex flex-column align-items-center p-3 my-md-5">
+                    <img src="img/index-page/amazon-dispositivos.png" alt="Ver en cualquier parte" class="img-fluid">
+                    <h2 class="fw-light my-4 text-center">Ver en cualquier parte</h2>
+                    <p class="lead text-center">
+                        Disfruta desde la web o con la aplicación de Prime Video en tu teléfono, tablet o ciertos Smart TV en hasta 3 dispositivos al mismo tiempo.
+                    </p>
+                </article>
+                <article class="col-sm-12 col-md-4 d-flex flex-column align-items-center p-3 my-md-5">
+                    <img src="img/index-page/amazon-downloads.png" alt="Descarga y disfruta" class="img-fluid">
+                    <h2 class="fw-light my-4 text-center">Descarga y disfruta</h2>
+                    <p class="lead text-center">
+                        Disfruta de contenido sin conexión con la aplicación Prime Video cuando descargues títulos en tu iPhone, iPad, tablet o dispositivo Android.
+                    </p>
+                </article>
+                <article class="col-sm-12 col-md-4 d-flex flex-column align-items-center p-3 my-md-5">
+                    <img src="img/index-page/amazon-ahorroDatos.png" alt="Ahorro de datos" class="img-fluid">
+                    <h2 class="fw-light my-4 text-center">Ahorro de datos</h2>
+                    <p class="lead text-center">
+                        Controla el uso de datos mientras descargas y ves videos en ciertos teléfonos y tablets.
+                    </p>
+                </article>
+            </section>
+        </main>
         <footer>
             <section class="bg-footer d-flex flex-column justify-content-center align-items-center">
                 <img src="img/img-logo/prime-video.png" alt="Logo Prime Video" class="img-footer-logo">
                 <div class="mt-2">
-                    <ul class="list-unstyled ul-footer d-flex flex-wrap justify-content-center">
-                        <li class="pe-2">
-                            <a href="#" class="text-footer-link fw-light">Términos y Aviso de privacidad</a>
+                    <ul class="list-unstyled ul-footer d-flex flex-wrap justify-content-center fw-light">
+                        <li class="px-2">
+                            <a href="#" class="text-footer-link">Términos y Aviso de privacidad</a>
                         </li>
-                        <li class="pe-sm-3 pe-md-2 my-sm-2 my-md-0">
+                        <li class="px-sm-3 px-lg-2 my-sm-2 my-md-0">
                             <a href="#" class="text-footer-link">Comentarios</a>
                         </li>
-                        <li class="pe-2">
+                        <li class="px-2">
                             <a href="#" class="text-footer-link">Ayuda</a>
                         </li>
-                        <li class="pe-2">
+                        <li class="px-2">
                             <p>&copy; 1996-2021, Amazon.com, Inc. o afiliados</p>
                         </li>
                     </ul>
