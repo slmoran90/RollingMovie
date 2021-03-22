@@ -1,3 +1,5 @@
+@import url(login.css);
+
 /* VARIABLES PARA LOS COLORES */
 :root
 {
@@ -65,6 +67,11 @@ main
     padding: 1rem 3rem;
 }
 
+.text-custom-link
+{
+    color: var(--links-color);
+}
+
 .img-brand-logo
 {
     background-position: left 0;
@@ -114,6 +121,11 @@ main
 }
 
 /*ESTIOLOS PARA CONTENIDO */
+.fa-medx
+{
+    font-size: 1.5em;
+}
+
 .mt-custom-main
 {
     margin-top: 5.2rem;
