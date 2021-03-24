@@ -29,3 +29,8 @@
 	width: 100%;
 	z-index: -1;
 }
+
+.bg-modal
+{
+	background: var(--bg-body);
+}
