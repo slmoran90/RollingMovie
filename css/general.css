@@ -1,0 +1,147 @@
+@import url(login.css);
+
+/* VARIABLES PARA LOS COLORES */
+
+:root {
+    --bg-body: #0F171E;
+    --bg-footer: #222;
+    --bg-navbar: #1A232E;
+    --btn-play-color: #1399DE;
+    --font-color: #FFFFFF;
+    --link-active-navbar: #FFFFFF;
+    --link-disable-navbar: #F2F4F6;
+    --link-navbar: rgba(242, 244, 246, .9);
+    --links-color: #0F79AF;
+}
+
+
+/* FONT IMPORTADA DESDE LOCAL */
+
+@font-face {
+    font-family: 'Amazon Ember';
+    src: url(../fonts/Amazon-Ember-Medium.ttf);
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Amazon Ember';
+    src: url(../fonts/AmazonEmber_Bold.ttf);
+    font-style: bold;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Amazon Ember';
+    src: url(../fonts/AmazonEmber_Light.ttf);
+    font-style: lighter;
+    font-weight: 300;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--bg-body);
+    font-family: 'Amazon Ember';
+}
+
+main {
+    min-height: 100vh;
+}
+
+
+/*ESTILOS PARA NAVBAR & FOOTER*/
+
+.bg-navbar {
+    background: var(--bg-navbar);
+    padding: 1rem 3rem;
+}
+
+.text-custom-link {
+    color: var(--links-color);
+}
+
+.img-brand-logo {
+    background-position: left 0;
+    height: 2.5rem;
+    position: relative;
+    top: 2px;
+    width: 7rem;
+}
+
+.text-nav-link {
+    color: var(--link-navbar);
+    font-size: 17px;
+    font-weight: normal;
+}
+
+.text-footer-link {
+    color: var(--links-color);
+    text-decoration: none;
+}
+
+.text-nav-link:hover {
+    color: #FFF;
+}
+
+.text-footer-link:hover {
+    color: var(--links-color);
+}
+
+.bg-footer {
+    background: var(--bg-footer);
+    color: #b1b1b1;
+    font-size: 15px;
+    padding: 1.5rem;
+}
+
+.img-footer-logo {
+    color: var(--link-color);
+    height: 2rem;
+    width: 6.8125rem;
+}
+
+
+/*ESTILOS PARA CONTENIDO */
+
+.fa-medx {
+    font-size: 1.5em;
+}
+
+.mt-custom-main {
+    margin-top: 5.2rem;
+}
+
+.bg-link {
+    background-color: var(--links-color);
+}
+
+#section-index {
+    min-height: 30rem;
+}
+
+#section-dispositives {
+    background: #fff;
+}
+
+#section-dispositives>article>h2 {
+    font-size: 2.25rem;
+}
+
+
+/*ESTILOS RESPONSIVE*/
+
+@media screen and (max-width: 768px) {
+    .bg-navbar {
+        padding: .5rem .75rem;
+    }
+    .bg-footer {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 1024px) {}
