@@ -1,4 +1,4 @@
-import { Users } from './classUsers.js';
+import { Users } from './class.js';
 /*
 	######################
 	# VARIABLES GLOBALES #
@@ -109,7 +109,7 @@ window.formLogin = function (e) {
 		password = document.getElementById('loginPassword'),
 		divError = document.getElementById('loginError');
 
-		divError.className = 'd-none';
+	divError.className = 'd-none';
 
 	if(validEmail(email) && validPassword(password)){
 		// OBTENGO LOS DATOS DEL LOCALSTORAGE
@@ -131,6 +131,10 @@ window.formLogin = function (e) {
 			}
 		}
 	}
+	else{
+		divError.className = 'alert alert-danger text-center';
+		divError.innerHTML = `<span>Completa los campos con tus datos.</span>`;
+	}
 	clearForm(form, email, password);
 }
 
@@ -141,7 +145,8 @@ window.formSignUp = function (e) {
 		userName = document.getElementById('userName'),
 		userEmail = document.getElementById('userEmail'),
 		userPass = document.getElementById('userPassword'),
-		userPass2 = document.getElementById('userPassword2');
+		userPass2 = document.getElementById('userPassword2'),
+		divError = document.getElementById('registerError');
 
 	if(validName(userName) && validEmail(userEmail) &&
 	validPassword(userPass) && validPassword(userPass2)){
@@ -149,11 +154,20 @@ window.formSignUp = function (e) {
 			/* Cuando los datos ingresados esten validados 
 			el usuario se guarda en localstorage */
 			addUsers(userName.value, userEmail.value, userPass.value);
+			Swal.fire({
+				icon: 'success',
+				title: '¡Bienvenido!',
+				text: '¡Tu cuenta se registro con exito!'
+			});
+			setTimeout(()=> modalLogin.hide(), '1000');
 		}
+	}
+	else{
+		divError.className = 'alert alert-danger text-center mt-2';
+		divError.innerHTML = `<span>Completa los campos con tus datos.</span>`;
 	}
 
 	clearForm(form, userName, userEmail, userPass, userPass2);
-	setTimeout(()=> modalRecover.hide(), '1000');
 }
 
 window.formPassRecover = function (e) {

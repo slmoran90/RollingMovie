@@ -6,3 +6,11 @@ export class Users{
         this._admin = false;
     }
 }
+
+export class Movie{
+    constructor(name, genre, img){
+        this._name = name;
+        this._genre = genre;
+        this._img = img;
+    }
+}
