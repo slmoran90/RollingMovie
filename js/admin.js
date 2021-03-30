@@ -21,9 +21,10 @@ window.agregarPelicula = function(event) {
     let nombre = document.getElementById('nombre').value;
     let categoria = document.getElementById('categoria').value;
     let descripcion = document.getElementById('descripcion').value;
-    let publicado = document.getElementById('publicado').value;
+    let publicado = document.getElementById('flexCheckDefaultAgregar').checked;
+    let imagen = document.getElementById('imagen').value;
 
-    let nuevaPelicula = new Pelicula(codigo, nombre, categoria, descripcion, publicado);
+    let nuevaPelicula = new Pelicula(codigo, nombre, categoria, descripcion, publicado, imagen);
 
     listaPelicula.push(nuevaPelicula);
     
@@ -81,7 +82,8 @@ function dibujarTabla(_listaPelicula) {
         <td>${_listaPelicula[i].nombre}</td>
         <td>${_listaPelicula[i].categoria}</td>
         <td>${_listaPelicula[i].descripcion}</td>
-        <td>${_listaPelicula[i].publicado}</td>
+        <td>${_listaPelicula[i].publicado?"Está publicado":"En espera"}</td>
+        <td>${_listaPelicula[i].imagen}</td>
         <td>
             <button class="btn btn-warning" onclick="abrirEditar(this)"  id='${i}'>Editar</button>
             <button class="btn btn-danger" onclick="eliminarPelicula(this)" id='${_listaPelicula[i].codigo}'>Borrar</button>
@@ -127,7 +129,8 @@ window.abrirEditar = function(boton){
     document.getElementById('nombre-edit').value  = listaPelicula[tempposicion].nombre;
     document.getElementById('categoria-edit').value  = listaPelicula[tempposicion].categoria;
     document.getElementById('descripcion-edit').value = listaPelicula[tempposicion].descripcion;
-    document.getElementById('publicado-edit').value = listaPelicula[tempposicion].publicado;
+    document.getElementById('flexCheckDefault').checked = listaPelicula[tempposicion].publicado;
+    document.getElementById('imagen-edit').value = listaPelicula[tempposicion].imagen;
 }
 
 window.GuardarEdicion = function(event) {
@@ -139,11 +142,13 @@ window.GuardarEdicion = function(event) {
     let nombre = document.getElementById('nombre-edit').value;
     let categoria = document.getElementById('categoria-edit').value;
     let descripcion = document.getElementById('descripcion-edit').value;
-    let publicado = document.getElementById('publicado-edit').value;
+    let publicado = document.getElementById('flexCheckDefault').checked;
+    let imagen = document.getElementById('imagen-edit').value;
 
 
-
-    let nuevaPelicula = new Pelicula(codigo, nombre, categoria, descripcion, publicado);
+    console.log("publicado")
+    console.log(publicado)
+    let nuevaPelicula = new Pelicula(codigo, nombre, categoria, descripcion, publicado, imagen);
     listaPelicula[tempposicion]= nuevaPelicula;
     localStorage.setItem("listaPeliculakey", JSON.stringify(listaPelicula));
     limpiarFormularioedit();

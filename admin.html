@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -75,7 +75,7 @@
                             <th scope="col">Categoria</th>
                             <th scope="col">Descripcion</th>
                             <th scope="col">Publicado</th>
-                            <th scope="col">Opciones</th>
+                            <th scope="col">ImagenUrl</th>
                         </tr>
                     </thead>
                     <tbody id="tablaPelis">
@@ -111,7 +111,11 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Publicado</label>
-                            <input type="text" id="publicado" class="form-control" placeholder="Publicado o no">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultAgregar"> 
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">ImagenUrl</label>
+                            <input type="text" id="imagen" class="form-control" placeholder="ImagenUrl">
                         </div>
                         <button class="btn btn-primary" type="submit">Guardar</button>
                     </form>
@@ -149,7 +153,11 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Publicado</label>
-                            <input type="text" id="publicado-edit" class="form-control" placeholder="Publicado o no">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"> 
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">ImagenUrl</label>
+                            <input type="text" id="imagen-edit" class="form-control" placeholder="ImagenUrl">
                         </div>
                         <button class="btn btn-primary" type="submit">Guardar</button>
                     </form>
