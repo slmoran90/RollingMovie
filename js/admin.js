@@ -21,9 +21,9 @@ window.agregarPelicula = function(event) {
     let nombre = document.getElementById('nombre').value;
     let categoria = document.getElementById('categoria').value;
     let descripcion = document.getElementById('descripcion').value;
-    let Publicado = document.getElementById('Publicado').value;
+    let publicado = document.getElementById('publicado').value;
 
-    let nuevaPelicula = new Pelicula(codigo, nombre, categoria, descripcion, Publicado);
+    let nuevaPelicula = new Pelicula(codigo, nombre, categoria, descripcion, publicado);
 
     listaPelicula.push(nuevaPelicula);
     
@@ -80,11 +80,12 @@ function dibujarTabla(_listaPelicula) {
         <th scope="row">${_listaPelicula[i].codigo}</th>
         <td>${_listaPelicula[i].nombre}</td>
         <td>${_listaPelicula[i].categoria}</td>
-        <td>${_listaPelicula[i].descripcion}C</td>
-        <td>${_listaPelicula[i].Publicado}</td>
+        <td>${_listaPelicula[i].descripcion}</td>
+        <td>${_listaPelicula[i].publicado}</td>
         <td>
             <button class="btn btn-warning" onclick="abrirEditar(this)"  id='${i}'>Editar</button>
             <button class="btn btn-danger" onclick="eliminarPelicula(this)" id='${_listaPelicula[i].codigo}'>Borrar</button>
+            <button class="btn btn-success" onclick="destacarPelicula(this)" id='${_listaPelicula[i].codigo}'>Destacar</button>
         </td>
     </tr>`;
         //agregar fila a su elemento padre
@@ -108,6 +109,7 @@ window.eliminarPelicula = function(boton){
             return producto.codigo != boton.id
           })
           localStorage.setItem("listaPeliculakey", JSON.stringify(peliculasFiltradas));
+          leerDatos();
             Swal.fire(
             'Eliminado!',
             'La pelicula fue eliminada!',
@@ -125,7 +127,7 @@ window.abrirEditar = function(boton){
     document.getElementById('nombre-edit').value  = listaPelicula[tempposicion].nombre;
     document.getElementById('categoria-edit').value  = listaPelicula[tempposicion].categoria;
     document.getElementById('descripcion-edit').value = listaPelicula[tempposicion].descripcion;
-    document.getElementById('Publicado-edit').value = listaPelicula[tempposicion].Publicado;
+    document.getElementById('publicado-edit').value = listaPelicula[tempposicion].publicado;
 }
 
 window.GuardarEdicion = function(event) {
@@ -137,12 +139,14 @@ window.GuardarEdicion = function(event) {
     let nombre = document.getElementById('nombre-edit').value;
     let categoria = document.getElementById('categoria-edit').value;
     let descripcion = document.getElementById('descripcion-edit').value;
-    let Publicado = document.getElementById('Publicado-edit').value;
+    let publicado = document.getElementById('publicado-edit').value;
 
 
 
-    let nuevaPelicula = new Pelicula(codigo, nombre, categoria, descripcion, Publicado);
+    let nuevaPelicula = new Pelicula(codigo, nombre, categoria, descripcion, publicado);
     listaPelicula[tempposicion]= nuevaPelicula;
     localStorage.setItem("listaPeliculakey", JSON.stringify(listaPelicula));
     limpiarFormularioedit();
 };
+
+//funcion para destacar la pelicula
