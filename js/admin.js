@@ -150,3 +150,10 @@ window.GuardarEdicion = function(event) {
 };
 
 //funcion para destacar la pelicula
+window.destacarPelicula = function (btn){
+    let listMovie = JSON.parse(localStorage.getItem('listaPeliculakey'));
+    if (listMovie === null) listMovie = listaPelicula;
+    let movieFeatured = listMovie.find(e => e.codigo === btn.id);
+    movieFeatured.destacado = true;
+    console.log(movieFeatured);
+} 
