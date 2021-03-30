@@ -1,4 +1,4 @@
-import { Pelicula } from "./peliClass.js";
+import { Pelicula } from "./class.js";
 
 var listaPelicula = [];
 //modal Agregar
