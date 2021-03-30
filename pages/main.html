@@ -1,27 +1,165 @@
 <!DOCTYPE html>  
 <html lang="es">
-	<head>
+    <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Cordich Martin, Guzman Nancy, Herrera Marcos, Morán Sergio">
         <meta name="description" content="Disfruta de series Amazon Originals exclusivas, además de películas y series populares. Puedes verlas en cualquier momento y en cualquier lugar. Comienza tu periodo de prueba gratis.">
         <meta name="keywords" content="películas, series, estrenos, accion, comedia, infantil, Prime Video">
-        <link rel="shortcut icon" href="img/img-ico/favicon-32x32.png" type="img/x-icon">
+        <link rel="shortcut icon" href="../img/img-ico/favicon-32x32.png" type="img/x-icon">
         
         <!-- BOOTSTRAP CSS -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
         <!-- CUSTOM CSS -->
-        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="../css/index.css">
+        <!-- FONT AWESOME -->
+        <script src="https://kit.fontawesome.com/c6be39f8fe.js" crossorigin="anonymous"></script>
         
-        <title>Bienvenido a Prime Video</title>
+        <title>Rolling Movie | Inicio</title>
     </head>
     <body>
-    	<nav></nav>
-    	<main></main>
+        <header class="bg-navbar fixed-top py-2">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="container-fluid">
+                    <a href="index.html" class="navbar-brand">
+                        <img src="../img/img-logo/prime-video.png"
+                        alt="Logo Amazon Prime Video"
+                        class="img-brand-logo">
+                    </a>
+                    <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbar"
+                    aria-controls="navbar"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbar">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a href="main.html" class="active nav-link text-nav-link pt-3 py-lg-0 pe-3">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link text-nav-link pt-3 py-lg-0 pe-3">Contacto</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link text-nav-link pt-3 py-lg-0 pe-3">Acerca de</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="d-none">Administracion</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    	<main class="mt-custom-main">
+            <section class="row gx-0">
+                <div class="col-12">
+                    <img src="../img/main-page/main-banner.jpg" alt="Película destacada" class="img-fluid">
+                </div>
+                <div class="col-12 d-flex flex-column justify-content-center align-items-center text-light text-center p-3" id="banner-info">
+                    <h1>Avengers: Inifity Wars</h1>
+                    <p class="fw-light">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero, ratione maxime. Suscipit, officiis. Libero, dolor!</p>
+                    <button type="button" class="btn bg-link p-2 mt-2 text-light">Reproducir</button>
+                </div>
+            </section>
+            <section class="container my-5" id="section-category">
+                <h2 class="text-light my-4">Categorias</h2>
+                <article id="categorySlider-1" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <h4 class="text-muted fw-bold">Terror</h4>
+                        <div class="carousel-item active" data-bs-interval="none">
+                            <div class="d-flex justify-content-evenly">
+                                <img src="https://picsum.photos/200?random=1" alt="" class="d-block m-2">
+                                <img src="https://picsum.photos/200?random=2" alt="" class="d-block m-2">
+                                <img src="https://picsum.photos/200?random=3" alt="" class="d-block m-2">
+                                <img src="https://picsum.photos/200?random=4" alt="" class="d-block m-2">
+                            </div>
+                        </div>
+                        <div class="carousel-item" data-bs-interval="none">
+                            <div class="d-flex justify-content-evenly">
+                                <img src="https://picsum.photos/200?random=5" alt="" class="d-block m-2">
+                                <img src="https://picsum.photos/200?random=6" alt="" class="d-block m-2">
+                                <img src="https://picsum.photos/200?random=7" alt="" class="d-block m-2">
+                                <img src="https://picsum.photos/200?random=8" alt="" class="d-block m-2">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#categorySlider-1" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#categorySlider-1" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                </article>
+                <article id="categorySlider-2" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <h4 class="text-muted fw-bold">Aventura</h4>
+                        <div class="carousel-item active" data-bs-interval="10000">
+                            <div class="d-flex justify-content-evenly">
+                                <img src="https://picsum.photos/200?random=1" alt="" class="d-block m-2">
+                                <img src="https://picsum.photos/200?random=2" alt="" class="d-block m-2">
+                                <img src="https://picsum.photos/200?random=3" alt="" class="d-block m-2">
+                                <img src="https://picsum.photos/200?random=4" alt="" class="d-block m-2">
+                            </div>
+                        </div>
+                        <div class="carousel-item" data-bs-interval="10000">
+                            <div class="d-flex justify-content-evenly">
+                                <img src="https://picsum.photos/200?random=5" alt="" class="d-block m-2">
+                                <img src="https://picsum.photos/200?random=6" alt="" class="d-block m-2">
+                                <img src="https://picsum.photos/200?random=7" alt="" class="d-block m-2">
+                                <img src="https://picsum.photos/200?random=8" alt="" class="d-block m-2">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#categorySlider-2" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#categorySlider-2" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                </article>
+                <article id="categorySlider-3" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <h4 class="text-muted fw-bold">Comedia</h4>
+                        <div class="carousel-item active" data-bs-interval="10000">
+                            <div class="d-flex justify-content-evenly">
+                                <img src="https://picsum.photos/200?random=1" alt="" class="d-block m-2">
+                                <img src="https://picsum.photos/200?random=2" alt="" class="d-block m-2">
+                                <img src="https://picsum.photos/200?random=3" alt="" class="d-block m-2">
+                                <img src="https://picsum.photos/200?random=4" alt="" class="d-block m-2">
+                            </div>
+                        </div>
+                        <div class="carousel-item" data-bs-interval="10000">
+                            <div class="d-flex justify-content-evenly">
+                                <img src="https://picsum.photos/200?random=5" alt="" class="d-block m-2">
+                                <img src="https://picsum.photos/200?random=6" alt="" class="d-block m-2">
+                                <img src="https://picsum.photos/200?random=7" alt="" class="d-block m-2">
+                                <img src="https://picsum.photos/200?random=8" alt="" class="d-block m-2">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#categorySlider-3" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#categorySlider-3" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                </article>
+            </section>
+        </main>
     	<footer>
             <section class="bg-footer d-flex flex-column justify-content-center align-items-center">
-                <img src="img/img-logo/prime-video.png" alt="Logo Prime Video" class="img-footer-logo">
+                <img src="../img/img-logo/prime-video.png" alt="Logo Prime Video" class="img-footer-logo">
                 <div class="mt-2">
                     <ul class="list-unstyled ul-footer d-flex flex-wrap justify-content-center fw-light">
                         <li class="px-2">
@@ -46,7 +184,8 @@
         </footer>
 
         <!-- BOOTSTAP & POPPER -->
-        <script src="js/popper.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
+        <script src="../js/popper.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/main.js"></script>
     </body>
 </html>

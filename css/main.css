@@ -1,0 +1,16 @@
+#banner-info{
+    background:rgba(0, 0, 0, .5);
+    border-top: 1px solid rgba(250, 250, 250, .5);
+    border-bottom: 1px solid rgba(250, 250, 250, .5);
+}
+
+.carousel-item > div >img{
+    width: 350px;
+    height: 200px;
+    object-fit: cover;
+    transition: all .3s ease-in-out;
+}
+
+.carousel-item > div > img:hover{
+    transform: scale(1.08);
+}
