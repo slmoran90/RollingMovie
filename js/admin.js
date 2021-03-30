@@ -23,14 +23,17 @@ window.agregarPelicula = function(event) {
     let descripcion = document.getElementById('descripcion').value;
     let publicado = document.getElementById('flexCheckDefaultAgregar').checked;
     let imagen = document.getElementById('imagen').value;
-
-    let nuevaPelicula = new Pelicula(codigo, nombre, categoria, descripcion, publicado, imagen);
-
-    listaPelicula.push(nuevaPelicula);
     
-    
-    localStorage.setItem("listaPeliculakey", JSON.stringify(listaPelicula));
-    limpiarFormulario();
+    if( validarCodigo(document.getElementById('codigo')) && 
+    validarNombre(document.getElementById('nombre')) &&
+    validarNombre(document.getElementById('categoria'))&&
+    validarNombre(document.getElementById('descripcion'))&&
+    validarNombre(document.getElementById('imagen'))){
+        let nuevaPelicula = new Pelicula(codigo, nombre, categoria, descripcion, publicado, imagen);    
+        listaPelicula.push(nuevaPelicula);        
+        localStorage.setItem("listaPeliculakey", JSON.stringify(listaPelicula));
+        limpiarFormulario();
+    }
 };
 
 function limpiarFormulario() {
@@ -83,7 +86,7 @@ function dibujarTabla(_listaPelicula) {
         <td>${_listaPelicula[i].categoria}</td>
         <td>${_listaPelicula[i].descripcion}</td>
         <td>${_listaPelicula[i].publicado?"Está publicado":"En espera"}</td>
-        <td>${_listaPelicula[i].imagen}</td>
+        <td>${_listaPelicula[i].imagen.length<20 ?_listaPelicula[i].imagen: _listaPelicula[i].imagen.slice(0, 20) + "..." }</td>
         <td>
             <button class="btn btn-warning" onclick="abrirEditar(this)"  id='${i}'>Editar</button>
             <button class="btn btn-danger" onclick="eliminarPelicula(this)" id='${_listaPelicula[i].codigo}'>Borrar</button>
@@ -146,12 +149,16 @@ window.GuardarEdicion = function(event) {
     let imagen = document.getElementById('imagen-edit').value;
 
 
-    console.log("publicado")
-    console.log(publicado)
-    let nuevaPelicula = new Pelicula(codigo, nombre, categoria, descripcion, publicado, imagen);
-    listaPelicula[tempposicion]= nuevaPelicula;
-    localStorage.setItem("listaPeliculakey", JSON.stringify(listaPelicula));
-    limpiarFormularioedit();
+    if( validarCodigo(document.getElementById('codigo-edit')) && 
+        validarNombre(document.getElementById('nombre-edit')) &&
+        validarNombre(document.getElementById('categoria-edit'))&&
+        validarNombre(document.getElementById('descripcion-edit'))&&
+        validarNombre(document.getElementById('imagen-edit'))){
+        let nuevaPelicula = new Pelicula(codigo, nombre, categoria, descripcion, publicado, imagen);
+        listaPelicula[tempposicion]= nuevaPelicula;
+        localStorage.setItem("listaPeliculakey", JSON.stringify(listaPelicula));
+        limpiarFormularioedit();
+    }
 };
 
 //funcion para destacar la pelicula
@@ -160,5 +167,29 @@ window.destacarPelicula = function (btn){
     if (listMovie === null) listMovie = listaPelicula;
     let movieFeatured = listMovie.find(e => e.codigo === btn.id);
     movieFeatured.destacado = true;
+    for(let i in listMovie){
+        if(movieFeatured != listMovie[i]) listMovie[i].destacado = false;
+    }
     console.log(movieFeatured);
 } 
+
+//Validaciones formulario admin
+window.validarCodigo = function(codigo){
+    if(codigo.value.trim() != '' && !isNaN(codigo.value) ){
+        codigo.className = 'form-control is-valid';
+        return true
+    }else{
+        codigo.className = 'form-control is-invalid';
+        return false
+    }
+}
+
+window.validarNombre= function(nombre){
+    if(nombre.value.trim() === ""){
+        nombre.className = 'form-control is-invalid';
+        return false
+    }else{
+        nombre.className = 'form-control is-valid';
+        return true
+    }
+}
