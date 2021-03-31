@@ -19,7 +19,7 @@ window.agregarPelicula = function(event) {
 
     let codigo = document.getElementById('codigo').value;
     let nombre = document.getElementById('nombre').value;
-    let categoria = document.getElementById('categoria').value;
+    let categoria = document.getElementById('categoria').value.toLowerCase();
     let descripcion = document.getElementById('descripcion').value;
     let publicado = document.getElementById('flexCheckDefaultAgregar').checked;
     let imagen = document.getElementById('imagen').value;
@@ -34,7 +34,7 @@ window.agregarPelicula = function(event) {
         localStorage.setItem("listaPeliculakey", JSON.stringify(listaPelicula));
         limpiarFormulario();
     }
-};
+}
 
 function limpiarFormulario() {
     let formulario = document.getElementById('formModal');
@@ -170,7 +170,9 @@ window.destacarPelicula = function (btn){
     for(let i in listMovie){
         if(movieFeatured != listMovie[i]) listMovie[i].destacado = false;
     }
-    console.log(movieFeatured);
+    console.log(listMovie);
+    listaPelicula = listMovie;
+    localStorage.setItem('listaPeliculakey', JSON.stringify(listaPelicula));
 } 
 
 //Validaciones formulario admin

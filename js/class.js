@@ -15,5 +15,6 @@ export class Pelicula {
         this.descripcion = descripcion;
         this.publicado = publicado;
         this.imagen = imagen;
+        this.destacado = false;
     }
 }
