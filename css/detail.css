@@ -1,0 +1,47 @@
+#imagenPelicula {
+    background: #000;
+    background-image: linear-gradient(to right, #000 45%, transparent 65%), url(../img/index-page/amazon-article-1.jpg);
+    background-position: right top;
+    background-size: cover;
+    height: 70vh;
+    width: 100%;
+}
+
+.btnPlayVideo {
+    background: var(--btn-play-color);
+}
+
+.info-article {
+    background: #000;
+    padding-bottom: 5%;
+}
+
+
+/*ESTILOS RESPONSIVE*/
+
+@media screen and (max-width: 768px) {}
+
+@media screen and (max-width: 1024px) {
+    #imagenPelicula {
+        background-image: linear-gradient(to top, #000 0, transparent 20%), url(../img/index-page/amazon-article-1.jpg);
+        background-position: right top;
+        background-size: cover;
+    }
+    .info-article {
+        background: #000;
+        padding-bottom: 5%;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .info-article {
+        background: none;
+        position: absolute;
+        z-index: 1;
+    }
+    #article-1 {
+        padding-right: 60%;
+        padding-left: 5%;
+        left: 0;
+    }
+}

@@ -1,0 +1,36 @@
+#particles-js
+{
+	height: 100vh;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+#div-social-media
+{
+	position: relative;
+}
+
+#div-social-media h5
+{
+	background-color: var(--bg-body);
+	display: inline-block;
+	z-index: 2;
+}
+
+#div-social-media::after
+{
+	border-top: 1px solid #6c757d;
+	content: "";
+	display: block;
+	height: 1px;
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	z-index: -1;
+}
+
+.bg-modal
+{
+	background: var(--bg-body);
+}

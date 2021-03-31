@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Cordich Martin, Guzman Nancy, Herrera Marcos, Morán Sergio">
+        <meta name="description" content="Disfruta de series Amazon Originals exclusivas, además de películas y series populares. Puedes verlas en cualquier momento y en cualquier lugar. Comienza tu periodo de prueba gratis.">
+        <meta name="keywords" content="películas, series, estrenos, accion, comedia, infantil, Prime Video">
+        <link rel="shortcut icon" href="../img/img-ico/favicon-32x32.png" type="img/x-icon">
+        
+        <!-- BOOTSTRAP CSS -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!-- CUSTOM CSS -->
+        <link rel="stylesheet" href="css/index.css">
+        <!-- FONT AWESOME -->
+        <script src="https://kit.fontawesome.com/c6be39f8fe.js" crossorigin="anonymous"></script>
+        <!-- SWEET ALERT -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.5/dist/sweetalert2.all.min.js"></script>
+    <title>Rolling Movie | Administración</title>
+</head>
+<body>
+    <header class="bg-navbar fixed-top py-2">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a href="index.html" class="navbar-brand">
+                    <img src="../img/img-logo/prime-video.png"
+                    alt="Logo Amazon Prime Video"
+                    class="img-brand-logo">
+                </a>
+                <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbar"
+                aria-controls="navbar"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbar">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a href="main.html" class="nav-link text-nav-link pt-3 py-lg-0 pe-3">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="contacto.html" class="nav-link text-nav-link pt-3 py-lg-0 pe-3">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="nosotros.html" class="nav-link text-nav-link pt-3 py-lg-0 pe-3">Acerca de</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="admin.html" class="active nav-link text-nav-link pt-3 py-lg-0 pe-3" id="adminNav">Administracion</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="mt-custom-main text-white">
+        <section class="container col-sm-12">
+            <h1>Administrar Peliculas/Series</h1>
+            <div class="row">
+                <div class="col-12">
+                    <h3>Tabla de Peliculas/Series</h3>
+                </div>
+                <div class="col-2 col-sm-12">
+                    <button class="btn btn-primary" id="btnAgregar">Agregar</button>
+                </div>
+            </div>
+            <div class="table-responsive table-responsive-md">
+                <table class="table table-striped">
+                    <thead>
+                        <tr class="text-white">
+                            <th scope="col">#</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Categoria</th>
+                            <th scope="col">Descripcion</th>
+                            <th scope="col">Publicado</th>
+                            <th scope="col">ImagenUrl</th>
+                            <th scope="col">Anio</th>
+                            <th scope="col">VideoUrl</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaPelis">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <div class="modal fade" id="modalProducto" tabindex="-1" aria-labelledby="modalprodructo" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalprodructo">Agregar Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formModal" onsubmit="agregarPelicula(event)">
+                        <div class="mb-3">
+                            <label class="form-label">Codigo</label>
+                            <input type="number" id="codigo" class="form-control" placeholder="1" onblur="validarCodigo(this)">
+                            <div class="invalid-feedback">
+                                Debe ingresar un numero de codigo
+                             </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Nombre</label>
+                            <input type="text" id="nombre" class="form-control" placeholder="UnPrincipeEnNewYork2" onblur="validarNombre(this)">
+                            <div class="invalid-feedback">
+                                Debe ingresar un nombre
+                             </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Categoria</label>
+                            <input type="text" id="categoria" class="form-control" placeholder="AMZ" onblur="validarNombre(this)">
+                            <div class="invalid-feedback">
+                                Debe ingresar una categoria
+                             </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Descripcion</label>
+                            <input type="text" id="descripcion" class="form-control" placeholder="ComingToAmerica2" rows="3" onblur="validarNombre(this)">
+                            <div class="invalid-feedback">
+                                Debe ingresar una descripcion
+                             </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Publicado</label>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultAgregar"> 
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">ImagenUrl</label>
+                            <input type="text" id="imagen" class="form-control" placeholder="ImagenUrl" onblur="validarNombre(this)">
+                            <div class="invalid-feedback">
+                                Debe ingresar una Url
+                             </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Anio</label>
+                            <input type="number" id="anio" class="form-control" placeholder="2000" onblur="validarCodigo(this)">
+                            <div class="invalid-feedback">
+                                Debe ingresar un numero de anio
+                             </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">VideoUrl</label>
+                            <input type="text" id="video" class="form-control" placeholder="VideoUrl" onblur="validarNombre(this)">
+                            <div class="invalid-feedback">
+                                Debe ingresar una Url
+                             </div>
+                        </div>
+                        <button class="btn btn-primary" type="submit">Guardar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modaleditar" tabindex="-1" aria-labelledby="modaleditarlabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modaleditarlabel">Editar Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formModalEdit" onsubmit="GuardarEdicion(event)">
+                        <div class="mb-3">
+                            <label class="form-label">Codigo</label>
+                            <input type="number" id="codigo-edit" class="form-control" placeholder="1" onblur="validarCodigo(this)">
+                            <div class="invalid-feedback">
+                                Debe ingresar un numero de codigo
+                             </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Nombre</label>
+                            <input type="text" id="nombre-edit" class="form-control" placeholder="UnPrincipeEnNewYork2" onblur="validarNombre(this)">
+                            <div class="invalid-feedback">
+                                Debe ingresar un nombre
+                             </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Categoria</label>
+                            <input type="text" id="categoria-edit" class="form-control" placeholder="AMZ" onblur="validarNombre(this)">
+                            <div class="invalid-feedback">
+                                Debe ingresar una categoria
+                             </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Descripcion</label>
+                            <input type="text" id="descripcion-edit" class="form-control" placeholder="ComingToAmerica2" rows="3" onblur="validarNombre(this)">
+                            <div class="invalid-feedback">
+                                Debe ingresar una descripcion
+                             </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Publicado</label>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"> 
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">ImagenUrl</label>
+                            <input type="text" id="imagen-edit" class="form-control" placeholder="ImagenUrl" onblur="validarNombre(this)">
+                            <div class="invalid-feedback">
+                                Debe ingresar una Url
+                             </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Anio</label>
+                            <input type="number" id="anio-edit" class="form-control" placeholder="2000" onblur="validarCodigo(this)">
+                            <div class="invalid-feedback">
+                                Debe ingresar un anio
+                             </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">VideoUrl</label>
+                            <input type="text" id="video-edit" class="form-control" placeholder="VideoUrl" onblur="validarNombre(this)">
+                            <div class="invalid-feedback">
+                                Debe ingresar una Url
+                             </div>
+                        </div>
+                        <button class="btn btn-primary" type="submit">Guardar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <section class="bg-footer d-flex flex-column justify-content-center align-items-center">
+            <img src="../img/img-logo/prime-video.png" alt="Logo Prime Video" class="img-footer-logo">
+            <div class="mt-2">
+                <ul class="list-unstyled ul-footer d-flex flex-wrap justify-content-center fw-light">
+                    <li class="px-2">
+                        <a href="#" class="text-footer-link">Términos y Aviso de privacidad</a>
+                    </li>
+                    <li class="px-sm-3 px-lg-2 my-sm-2 my-md-0">
+                        <a href="#" class="text-footer-link">
+                            <i class="fab fa-instagram fa-medx"></i>
+                        </a>
+                    </li>
+                    <li class="px-2">
+                        <a href="#" class="text-footer-link">
+                            <i class="fab fa-twitter fa-medx"></i>
+                        </a>
+                    </li>
+                    <li class="px-2">
+                        <p>&copy; 1996-2021, Amazon.com, Inc. o afiliados</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </footer>
+    <!-- BOOTSTAP & POPPER -->
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- PARTICLES -->
+    
+    <script type="module" src="../js/admin.js"></script>
+</body>
+</html>
