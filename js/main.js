@@ -23,7 +23,7 @@ const showMovieFeatured = () =>{
             <h1>${movieFeatured.nombre}</h1>
             <p class="fw-light">${movieFeatured.descripcion}</p>
             <button type="button" class="btn bg-link p-2 mt-2">
-                <a href="#" class="text-decoration-none text-light">Reproducir</a>
+                <a href="../error404.html" class="text-decoration-none text-light">Reproducir</a>
             </button>
         </div>
     `
