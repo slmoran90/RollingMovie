@@ -1,0 +1,73 @@
+<!DOCTYPE html>  
+<html lang="es">
+	<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Cordich Martin, Guzman Nancy, Herrera Marcos, Morán Sergio">
+        <meta name="description" content="Disfruta de series Amazon Originals exclusivas, además de películas y series populares. Puedes verlas en cualquier momento y en cualquier lugar. Comienza tu periodo de prueba gratis.">
+        <meta name="keywords" content="películas, series, estrenos, accion, comedia, infantil, Prime Video">
+        <link rel="shortcut icon" href="../img/img-ico/favicon-32x32.png" type="img/x-icon">
+        
+        <!-- BOOTSTRAP CSS -->
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <!-- CUSTOM CSS -->
+        <link rel="stylesheet" href="../css/index.css">
+        <!-- FONT AWESOME -->
+        <script src="https://kit.fontawesome.com/c6be39f8fe.js" crossorigin="anonymous"></script>
+        <!-- EMAILJS -->
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+        <script type="text/javascript">
+            (function() {
+            emailjs.init("user_UwejIUNBwr1mgcBds4hk2");
+            })();
+        </script>
+        <!-- SWEET ALERT -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.5/dist/sweetalert2.all.min.js"></script>
+        
+        <title>Rolling Movie | Contactanos</title>
+    </head>
+    <body>
+    	<main class="container">
+            <div class="row">
+                <div class="col-lg-6 position-relative">
+                    <div class="d-none d-lg-block" id="particles-js"></div>
+                </div>
+                <div class="col-sm-12 col-lg-6">
+                    <h2 class="fw-bold text-center py-5 text-light">¡Contactate con nosotros!</h2>
+
+                    <!-- FORMULARIO DE INICIO DE SESION -->
+                    <form action="" id="formContact" onsubmit="formContact(event)">
+                        <div class="form-floating mb-4">
+                            <input class="form-control" type="email" id="contactEmail" placeholder="Email" onblur="validEmail(this)">
+                            <div class="d-none" id="div-contactEmail-error"></div>
+                            <label for="inputEmail" class="text-muted">Email</label>
+                        </div>
+                        <div class="form-floating mb-4">
+                            <input type="text" class="form-control" id="contactName" placeholder="Nombre" onblur="validName(this)">
+                            <div class="d-none" id="div-contactName-error"></div>
+                            <label for="inputName" class="text-muted">Nombre</label>
+                        </div>
+                        <div class="form-floating mb-4">
+                            <textarea id="contactText" rows="6" placeholder="Mensaje..." class="w-100"></textarea>
+                        </div>
+                        <div class="row d-flex justify-content-center py-3 mb-4">
+                            <button class="btn bg-link col-6 text-light" type="sumbit">Enviar</button>
+                        </div>
+                        <div id="contactError" class="d-none"></div>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <!-- ------------------------------- -->
+        
+        <!-- BOOTSTAP & POPPER -->
+        <script src="../js/popper.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <!-- PARTICLES -->
+        <script src="../js/particles.min.js"></script>
+        <script src="../js/particles.js"></script>
+        <script src="../js/contact.js"></script>
+    </body>
+</html>
