@@ -7,6 +7,10 @@
     width: 100%;
 }
 
+.btnPlayVideo {
+    background: var(--btn-play-color);
+}
+
 .info-article {
     background: #000;
     padding-bottom: 5%;

@@ -8,7 +8,8 @@ function cargarLocalStorage() {
             duracion: '110 minutos',
             reparto: 'Eddie Murphy, Arsenio Hall,Jermaine Fowler',
             anio: '2021',
-            imagen: 'https://cinergiaonline.com/wp-content/uploads/2018/09/universo-warren.jpeg'
+            imagen: 'https://cinergiaonline.com/wp-content/uploads/2018/09/universo-warren.jpeg',
+            video: 'https://www.youtube.com/embed/AKpPeLAMY9I'
         },
         {
             codigo: 5000,
@@ -19,7 +20,20 @@ function cargarLocalStorage() {
             duracion: '110 minutos',
             reparto: 'Eddie Murphy, Arsenio Hall,Jermaine Fowler',
             anio: '2021',
-            imagen: 'https://cinergiaonline.com/wp-content/uploads/2018/09/universo-warren.jpeg'
+            imagen: 'https://cinergiaonline.com/wp-content/uploads/2018/09/universo-warren.jpeg',
+            video: 'https://www.youtube.com/embed/RIKOJP9PHP0'
+        },
+        {
+            codigo: 6000,
+            nombre: 'Nombre de la pelicula',
+            descripcion: 'descripcion',
+            categoria: 'comedia',
+            publicado: true,
+            duracion: '110 minutos',
+            reparto: 'Eddie Murphy, Arsenio Hall,Jermaine Fowler',
+            anio: '2021',
+            imagen: 'https://cinergiaonline.com/wp-content/uploads/2018/09/universo-warren.jpeg',
+            video: 'https://www.youtube.com/embed/5TqfpCsA5mk'
         }
     ];
 
@@ -28,7 +42,7 @@ function cargarLocalStorage() {
 
 function cargarPelicula() {
 
-    const codigo = 5000; //viene del index.html
+    const codigo = 6000; //viene del index.html
     let peliculas = JSON.parse(localStorage.getItem('peliculas'));
     console.log(peliculas);
     let peliculaAMostrar = null;
@@ -39,31 +53,6 @@ function cargarPelicula() {
             peliculaAMostrar = pelicula;
         }
     });
-
-    //obtener los datos del local storage
-    /* let pelicula1 = {
-        codigo: 4009,
-        nombre: 'Un principe en Nueva York 2',
-        descripcion: 'regreso del principe',
-        categoria: 'comedia',
-        publicado: true,
-        duracion: '110 minutos',
-        reparto: 'Eddie Murphy, Arsenio Hall,Jermaine Fowler',
-        anio: '2021',
-        imagen: 'https://cinergiaonline.com/wp-content/uploads/2018/09/universo-warren.jpeg'
-    }
-
-    let pelicula2 = {
-        codigo: 4009,
-        nombre: 'Un principe en Nueva York 3',
-        descripcion: 'regreso del principe',
-        categoria: 'comedia',
-        publicado: true,
-        duracion: '110 minutos',
-        reparto: 'Eddie Murphy, Arsenio Hall,Jermaine Fowler',
-        anio: '2021',
-        imagen: 'https://cinergiaonline.com/wp-content/uploads/2018/09/universo-warren.jpeg'
-    } */
 
     //llamar al metodo para mostrar la pelicula
     mostrarPelicula(peliculaAMostrar);
@@ -82,12 +71,24 @@ function mostrarPelicula(objPelicula) {
 
     let anioPelicula = document.getElementById('anioPelicula');
     anioPelicula.innerHTML = objPelicula.anio;
+
     let imagenPelicula = document.getElementById('imagenPelicula');
-    imagenPelicula.style.backgroundImage = 'url(' + objPelicula.imagen + ')'
+    imagenPelicula.style.backgroundImage = 'url(' + objPelicula.imagen + ')';
+    // imagenPelicula.style.backgroundImage = 'url(img/movies/' + objPelicula.imagen + ')' 
+
+    let videoPlayer = document.getElementById('videoPlayer');
+    videoPlayer.src = objPelicula.video;
 }
 
-function reproducirPelicula() {
+function reproducirPelicula() {}
 
+function detenerVideo() {
+    console.log('cerrar video');
+    let videoPlayer = document.getElementById('videoPlayer');
+    console.log(videoPlayer.src);
+    videoPlayer.src = videoPlayer.src
 }
+
 cargarLocalStorage();
+
 cargarPelicula();
