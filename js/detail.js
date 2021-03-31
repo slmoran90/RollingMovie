@@ -41,9 +41,15 @@ function cargarLocalStorage() {
 }
 
 function cargarPelicula() {
-
-    const codigo = 6000; //viene del index.html
-    let peliculas = JSON.parse(localStorage.getItem('peliculas'));
+    // control de validacion del codigo de la pelicula seleccionada
+    const codigo = localStorage.getItem('peliculaSeleccionada');
+    if (!codigo) {
+        alert('Codigo de pelicula no encontrada');
+        // se redirecciona a la pagina principal en caso que no exista el codigo
+        window.location.href = '/pages/main.html';
+        return;
+    }
+    let peliculas = JSON.parse(localStorage.getItem('listaPeliculakey'));
     console.log(peliculas);
     let peliculaAMostrar = null;
 
@@ -54,30 +60,52 @@ function cargarPelicula() {
         }
     });
 
+    if (peliculaAMostrar === null) {
+        alert('Pelicula no encontrada');
+        window.location.href = '/pages/main.html';
+        return;
+    }
+
     //llamar al metodo para mostrar la pelicula
     mostrarPelicula(peliculaAMostrar);
 }
 
 function mostrarPelicula(objPelicula) {
     //mostrar los datos
-    let tituloPelicula = document.getElementById('tituloPelicula');
-    tituloPelicula.innerHTML = objPelicula.nombre;
+    if (objPelicula.nombre) {
+        let tituloPelicula = document.getElementById('tituloPelicula');
+        tituloPelicula.innerHTML = objPelicula.nombre;
+    }
 
-    let descripcionPelicula = document.getElementById('descripcionPelicula');
-    descripcionPelicula.innerHTML = objPelicula.descripcion;
+    if (objPelicula.descripcion) {
+        let descripcionPelicula = document.getElementById('descripcionPelicula');
+        descripcionPelicula.innerHTML = objPelicula.descripcion;
+    }
 
-    let duracionPelicula = document.getElementById('duracionPelicula');
-    duracionPelicula.innerHTML = objPelicula.duracion;
+    if (objPelicula.duracion) {
+        let duracionPelicula = document.getElementById('duracionPelicula');
+        duracionPelicula.innerHTML = objPelicula.duracion;
+    }
+    if (objPelicula.anio) {
+        let anioPelicula = document.getElementById('anioPelicula');
+        anioPelicula.innerHTML = objPelicula.anio;
+    }
 
-    let anioPelicula = document.getElementById('anioPelicula');
-    anioPelicula.innerHTML = objPelicula.anio;
+    if (objPelicula.imagen) {
+        let imagenPelicula = document.getElementById('imagenPelicula');
+        //imagenPelicula.style.backgroundImage = 'url(' + objPelicula.imagen + ')';
+        imagenPelicula.style.backgroundImage = 'url(img/main-page/categorias/' + objPelicula.categoria + '/' + objPelicula.imagen + ')'
+    }
 
-    let imagenPelicula = document.getElementById('imagenPelicula');
-    imagenPelicula.style.backgroundImage = 'url(' + objPelicula.imagen + ')';
-    // imagenPelicula.style.backgroundImage = 'url(img/movies/' + objPelicula.imagen + ')' 
+    let btnPlayVideo = document.getElementById('btnPlayVideo');
+    if (objPelicula.video) {
+        let videoPlayer = document.getElementById('videoPlayer');
+        videoPlayer.src = objPelicula.video;
+        btnPlayVideo.classList.add('d-block');
+    } else {
+        btnPlayVideo.classList.add('d-none');
+    }
 
-    let videoPlayer = document.getElementById('videoPlayer');
-    videoPlayer.src = objPelicula.video;
 }
 
 function reproducirPelicula() {}
@@ -89,6 +117,6 @@ function detenerVideo() {
     videoPlayer.src = videoPlayer.src
 }
 
-cargarLocalStorage();
+//cargarLocalStorage();
 
 cargarPelicula();
