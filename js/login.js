@@ -123,7 +123,7 @@ window.formLogin = function (e) {
 			entonces permite el acceso al sitio y es redirigido*/
 			if((list[i]._email === email.value) && (list[i]._password === password.value)){
 				divError.className = 'd-none';
-				window.location = '../pages/main.html';
+				window.location = '../pages/admin.html';
 			}
 			else if((list[i]._email !== email.value) || (list[i]._password !== password.value)){
 				divError.className = 'alert alert-danger text-center';
