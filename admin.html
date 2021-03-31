@@ -10,9 +10,9 @@
         <link rel="shortcut icon" href="img/img-ico/favicon-32x32.png" type="img/x-icon">
         
         <!-- BOOTSTRAP CSS -->
-        <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
         <!-- CUSTOM CSS -->
-        <link rel="stylesheet" href="../css/index.css">
+        <link rel="stylesheet" href="css/index.css">
         <!-- FONT AWESOME -->
         <script src="https://kit.fontawesome.com/c6be39f8fe.js" crossorigin="anonymous"></script>
         <!-- EMAILJS -->
@@ -75,6 +75,8 @@
                             <th scope="col">Descripcion</th>
                             <th scope="col">Publicado</th>
                             <th scope="col">ImagenUrl</th>
+                            <th scope="col">Anio</th>
+                            <th scope="col">VideoUrl</th>
                         </tr>
                     </thead>
                     <tbody id="tablaPelis">
@@ -127,6 +129,20 @@
                         <div class="mb-3">
                             <label class="form-label">ImagenUrl</label>
                             <input type="text" id="imagen" class="form-control" placeholder="ImagenUrl" onblur="validarNombre(this)">
+                            <div class="invalid-feedback">
+                                Debe ingresar una Url
+                             </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Anio</label>
+                            <input type="number" id="anio" class="form-control" placeholder="2000" onblur="validarCodigo(this)">
+                            <div class="invalid-feedback">
+                                Debe ingresar un numero de anio
+                             </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">VideoUrl</label>
+                            <input type="text" id="video" class="form-control" placeholder="VideoUrl" onblur="validarNombre(this)">
                             <div class="invalid-feedback">
                                 Debe ingresar una Url
                              </div>
@@ -186,6 +202,20 @@
                                 Debe ingresar una Url
                              </div>
                         </div>
+                        <div class="mb-3">
+                            <label class="form-label">Anio</label>
+                            <input type="number" id="anio-edit" class="form-control" placeholder="2000" onblur="validarCodigo(this)">
+                            <div class="invalid-feedback">
+                                Debe ingresar un anio
+                             </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">VideoUrl</label>
+                            <input type="text" id="video-edit" class="form-control" placeholder="VideoUrl" onblur="validarNombre(this)">
+                            <div class="invalid-feedback">
+                                Debe ingresar una Url
+                             </div>
+                        </div>
                         <button class="btn btn-primary" type="submit">Guardar</button>
                     </form>
                 </div>
@@ -218,11 +248,12 @@
         </section>
     </footer>
     <!-- BOOTSTAP & POPPER -->
-    <script src="/js/popper.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <!-- PARTICLES -->
 
     
-    <script type="module" src="/js/admin.js"></script>
+    <script type="module" src="js/admin.js"></script>
+    <script type="module" src="js/class.js"></script>
 </body>
 </html>

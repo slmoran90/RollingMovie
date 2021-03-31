@@ -23,13 +23,17 @@ window.agregarPelicula = function(event) {
     let descripcion = document.getElementById('descripcion').value;
     let publicado = document.getElementById('flexCheckDefaultAgregar').checked;
     let imagen = document.getElementById('imagen').value;
+    let anio = document.getElementById('anio').value;
+    let video = document.getElementById('video').value;
     
     if( validarCodigo(document.getElementById('codigo')) && 
     validarNombre(document.getElementById('nombre')) &&
     validarNombre(document.getElementById('categoria'))&&
     validarNombre(document.getElementById('descripcion'))&&
-    validarNombre(document.getElementById('imagen'))){
-        let nuevaPelicula = new Pelicula(codigo, nombre, categoria, descripcion, publicado, imagen);    
+    validarNombre(document.getElementById('imagen'))&&
+    validarCodigo(document.getElementById('anio'))&&
+    validarNombre(document.getElementById('video'))){
+        let nuevaPelicula = new Pelicula(codigo, nombre, categoria, descripcion, publicado, imagen, anio, video);    
         listaPelicula.push(nuevaPelicula);        
         localStorage.setItem("listaPeliculakey", JSON.stringify(listaPelicula));
         limpiarFormulario();
@@ -87,6 +91,8 @@ function dibujarTabla(_listaPelicula) {
         <td>${_listaPelicula[i].descripcion}</td>
         <td>${_listaPelicula[i].publicado?"Está publicado":"En espera"}</td>
         <td>${_listaPelicula[i].imagen.length<20 ?_listaPelicula[i].imagen: _listaPelicula[i].imagen.slice(0, 20) + "..." }</td>
+        <td>${_listaPelicula[i].anio}</td>
+        <td>${_listaPelicula[i].video}</td>
         <td>
         <div class="btn-group">
         <button class="btn btn-warning" onclick="abrirEditar(this)"  id='${i}'>Editar</button>
@@ -136,6 +142,8 @@ window.abrirEditar = function(boton){
     document.getElementById('descripcion-edit').value = listaPelicula[tempposicion].descripcion;
     document.getElementById('flexCheckDefault').checked = listaPelicula[tempposicion].publicado;
     document.getElementById('imagen-edit').value = listaPelicula[tempposicion].imagen;
+    document.getElementById('anio-edit').value = listaPelicula[tempposicion].anio;
+    document.getElementById('video-edit').value = listaPelicula[tempposicion].video;
 }
 
 window.GuardarEdicion = function(event) {
@@ -149,14 +157,18 @@ window.GuardarEdicion = function(event) {
     let descripcion = document.getElementById('descripcion-edit').value;
     let publicado = document.getElementById('flexCheckDefault').checked;
     let imagen = document.getElementById('imagen-edit').value;
-
+    let anio = document.getElementById('anio-edit').value;
+    let video = document.getElementById('video-edit').value;
 
     if( validarCodigo(document.getElementById('codigo-edit')) && 
         validarNombre(document.getElementById('nombre-edit')) &&
         validarNombre(document.getElementById('categoria-edit'))&&
         validarNombre(document.getElementById('descripcion-edit'))&&
-        validarNombre(document.getElementById('imagen-edit'))){
-        let nuevaPelicula = new Pelicula(codigo, nombre, categoria, descripcion, publicado, imagen);
+        validarNombre(document.getElementById('imagen-edit'))&&
+        validarCodigo(document.getElementById('anio-edit'))&&
+        validarNombre(document.getElementById('video-edit'))
+        ){
+        let nuevaPelicula = new Pelicula(codigo, nombre, categoria, descripcion, publicado, imagen, anio, video);
         listaPelicula[tempposicion]= nuevaPelicula;
         localStorage.setItem("listaPeliculakey", JSON.stringify(listaPelicula));
         limpiarFormularioedit();
