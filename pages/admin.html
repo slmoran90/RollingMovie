@@ -10,9 +10,9 @@
         <link rel="shortcut icon" href="../img/img-ico/favicon-32x32.png" type="img/x-icon">
         
         <!-- BOOTSTRAP CSS -->
-        <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
         <!-- CUSTOM CSS -->
-        <link rel="stylesheet" href="../css/index.css">
+        <link rel="stylesheet" href="css/index.css">
         <!-- FONT AWESOME -->
         <script src="https://kit.fontawesome.com/c6be39f8fe.js" crossorigin="anonymous"></script>
         <!-- SWEET ALERT -->
@@ -57,18 +57,17 @@
         </nav>
     </header>
     <main class="mt-custom-main text-white">
-        <section class="container">
-            <!-- completar el maquetado de esta sección -->
+        <section class="container col-sm-12">
             <h1>Administrar Peliculas/Series</h1>
             <div class="row">
-                <div class="col-10">
+                <div class="col-12">
                     <h3>Tabla de Peliculas/Series</h3>
                 </div>
-                <div class="col-2">
+                <div class="col-2 col-sm-12">
                     <button class="btn btn-primary" id="btnAgregar">Agregar</button>
                 </div>
             </div>
-            <div class="table-responsive">
+            <div class="table-responsive table-responsive-md">
                 <table class="table table-striped">
                     <thead>
                         <tr class="text-white">
@@ -78,6 +77,8 @@
                             <th scope="col">Descripcion</th>
                             <th scope="col">Publicado</th>
                             <th scope="col">ImagenUrl</th>
+                            <th scope="col">Anio</th>
+                            <th scope="col">VideoUrl</th>
                         </tr>
                     </thead>
                     <tbody id="tablaPelis">
@@ -134,14 +135,26 @@
                                 Debe ingresar una Url
                              </div>
                         </div>
+                        <div class="mb-3">
+                            <label class="form-label">Anio</label>
+                            <input type="number" id="anio" class="form-control" placeholder="2000" onblur="validarCodigo(this)">
+                            <div class="invalid-feedback">
+                                Debe ingresar un numero de anio
+                             </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">VideoUrl</label>
+                            <input type="text" id="video" class="form-control" placeholder="VideoUrl" onblur="validarNombre(this)">
+                            <div class="invalid-feedback">
+                                Debe ingresar una Url
+                             </div>
+                        </div>
                         <button class="btn btn-primary" type="submit">Guardar</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-
-
 
     <div class="modal fade" id="modaleditar" tabindex="-1" aria-labelledby="modaleditarlabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -191,13 +204,26 @@
                                 Debe ingresar una Url
                              </div>
                         </div>
+                        <div class="mb-3">
+                            <label class="form-label">Anio</label>
+                            <input type="number" id="anio-edit" class="form-control" placeholder="2000" onblur="validarCodigo(this)">
+                            <div class="invalid-feedback">
+                                Debe ingresar un anio
+                             </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">VideoUrl</label>
+                            <input type="text" id="video-edit" class="form-control" placeholder="VideoUrl" onblur="validarNombre(this)">
+                            <div class="invalid-feedback">
+                                Debe ingresar una Url
+                             </div>
+                        </div>
                         <button class="btn btn-primary" type="submit">Guardar</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-
     <footer>
         <section class="bg-footer d-flex flex-column justify-content-center align-items-center">
             <img src="../img/img-logo/prime-video.png" alt="Logo Prime Video" class="img-footer-logo">
@@ -224,12 +250,10 @@
         </section>
     </footer>
     <!-- BOOTSTAP & POPPER -->
-    <script src="/js/popper.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <!-- PARTICLES -->
-
     
     <script type="module" src="../js/admin.js"></script>
-
 </body>
 </html>
