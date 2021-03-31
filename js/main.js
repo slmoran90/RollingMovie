@@ -29,7 +29,7 @@ const showMovieFeatured = () =>{
     `
 }
 
-const drawMovies = () =>{
+/* const drawMovies = () =>{
     const divImg = document.getElementById('divImg');
     let movies = movieList.find(e => e.publicado === true);
 
@@ -41,31 +41,8 @@ const drawMovies = () =>{
 const showSlider = () =>{
     let sliderInner = document.getElementById('sliderInner');
     
-    sliderInner.innerHTML = '';
-    for(let i in movieList){
-        let column = '';
-        column = `
-            <div class="carousel-item ${i==0 ? 'active' : ''}">
-                <div class="card mb-3">
-                    <div class="row gx-0">
-                        <div class="col-md-8>
-                            <img src="..img/main-page/movies/${movieList[i].imagen}" class="container-fluid" alt="Rolling Movie">
-                        </div>
-                        <div class="col-md-4 align-self-center">
-                            <div class="card-body">
-                                <h5 class="card-title text-light text-center"> ${movieList[i].nombre}</h5>
-                                <p class="card-text text-light fw-light">${movieList[i].descripcion}</p>
-                                <div class="d-flex"
-                                    <a href="details.html" class="text-light" id="${movieList[i].codigo}">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        `
-    }
+...
 }
 
+showSlider(); */
 showMovieFeatured();
-showSlider();
