@@ -88,9 +88,11 @@ function dibujarTabla(_listaPelicula) {
         <td>${_listaPelicula[i].publicado?"Está publicado":"En espera"}</td>
         <td>${_listaPelicula[i].imagen.length<20 ?_listaPelicula[i].imagen: _listaPelicula[i].imagen.slice(0, 20) + "..." }</td>
         <td>
-            <button class="btn btn-warning" onclick="abrirEditar(this)"  id='${i}'>Editar</button>
-            <button class="btn btn-danger" onclick="eliminarPelicula(this)" id='${_listaPelicula[i].codigo}'>Borrar</button>
-            <button class="btn btn-success" onclick="destacarPelicula(this)" id='${_listaPelicula[i].codigo}'>Destacar</button>
+        <div class="btn-group">
+        <button class="btn btn-warning" onclick="abrirEditar(this)"  id='${i}'>Editar</button>
+        <button class="btn btn-danger" onclick="eliminarPelicula(this)" id='${_listaPelicula[i].codigo}'>Borrar</button>
+        <button class="btn btn-success" onclick="destacarPelicula(this)" id='${_listaPelicula[i].codigo}'>Destacar</button>
+        </div>
         </td>
     </tr>`;
         //agregar fila a su elemento padre
